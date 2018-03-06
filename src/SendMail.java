@@ -1,5 +1,6 @@
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Properties;
 import javax.mail.*;
@@ -36,16 +37,20 @@ public static void main(String[] args) throws InterruptedException {
 
 
       
-	    int i = Database.getNameMailList().size()-1;
+
+	    
+	    ArrayList<String> nowa = new ArrayList<String>();
+	    nowa = Database.getNameMailList();
 		//int i =0;
+	    int i = nowa.size()-1;
 		while (i<= 0 ){
 			
 			Date currentDate = new Date();
 			SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
 			String dateString = dateFormat.format(currentDate);
 			System.out.println(dateString);
-            String mail = Database.getNameMailList().get(i);
-            String imie = Database.getNameMailList().get(i-1);
+            String mail = nowa.get(i);
+            String imie = nowa.get(i-1);
 
             System.out.println(i);
             System.out.println(imie);
