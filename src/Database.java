@@ -71,8 +71,9 @@ public class Database {
           String mail = result.getString(2);
 
  
-          list.add(mail);
+
           list.add(first_name);
+          list.add(mail);
         }
       } catch (SQLException e) {
         e.printStackTrace();
